@@ -163,7 +163,7 @@
 					<div class="row">
 						<!-- QUESTIONS HOLDER -->
 						<div class="col-lg-6">
-							<div class="questions-holder pc-10" v-for="soru in data" :key="soru">
+							<div class="questions-holder pc-10" v-for="soru in data.records" :key="soru">
 								<!-- QUESTION #1 -->
 								<div class="question wow fadeInUp" data-wow-delay="0.4s">
 									<!-- Question -->
@@ -183,6 +183,38 @@
 					<!-- End row -->
 				</div>
 				<!-- END FAQs-2 QUESTIONS -->
+				<div class="bg_whitesmoke pb-100 page-pagination division">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+
+								<nav aria-label="Page navigation">
+									<ul class="pagination ico-20 justify-content-center">
+										<li class="page-item" :class="this.params.page == 1 ? 'disabled' : '' ">
+											<button class="page-link" tabindex="-1"
+												@click="change(this.params.page - 1)">
+												<span class="flaticon-chevron-pointing-to-the-left"></span>
+											</button>
+										</li>
+
+										<li class="page-item" v-for="page in data.pages"
+											:class="this.params.page  == page ? 'active' : '' ">
+											<button class="page-link" @click="change(page)">{{page}}<span
+													class="sr-only">(current)</span>
+											</button>
+										</li>
+
+										<li class="page-item" :class="this.params.page == page ? 'disabled' : '' ">
+											<button class="page-link" @click="change(this.params.page + 1)"><span
+													class="flaticon-right-chevron"></span>
+											</button>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div> <!-- End row -->
+					</div> <!-- End container -->
+				</div> <!-- END PAGE PAGINATION -->
 
 				<!-- MORE QUESTIONS BUTTON -->
 				<div class="row">
@@ -332,17 +364,29 @@
 			data() {
 				return {
 					data: [],
+					params: {
+						limit: 4,
+						page: 1,
+						sorts: {},
+						filters: {},
+						column_array_id: 0,
+						column_array_id_query: 0
+					}
 				};
 			},
 			methods: {
+				change(e) {
+					this.params.page = e
+					this.getData()
+				},
 				getData() {
 					axios
 						.post("https://52.17.28.130/api/v1/public/tables/sssorular", {
-							params: '{"page":1,"limit":"10","column_array_id":"0","column_array_id_query":"0","sorts":{},"filters":{},"editMode":false,"liveDataMode":false,"columnNames":["id","title","content","cevaplar_id","kategori_ids","state","own_id","user_id","created_at","updated_at"],"groupBy":[],"filterColumnNames":[]}',
+							params: JSON.stringify(this.params),
 						})
 						.then((res) => {
 							console.log(res);
-							this.data = res.data.data.records;
+							this.data = res.data.data;
 						});
 				},
 			},
