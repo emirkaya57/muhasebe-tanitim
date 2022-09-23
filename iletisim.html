@@ -60,15 +60,12 @@
 
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<!-- v-mask-->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/v-mask/dist/v-mask.min.js"></script>
-	<script>
-		// As a plugin
-		Vue.use(VueMask.VueMaskPlugin);
 
-		// Or as a directive
-		Vue.directive('mask', VueMask.VueMaskDirective);
-	</script>
+
 </head>
 
 <body>
@@ -162,8 +159,8 @@
 				<div class="row">
 					<div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
 						<div class="form-holder">
-							<form name="contactform" class="row contact-form">
-								<dialog class="mes-dialog" id="dialog-default" ref="dialog"></dialog>
+							<form name="contactform" class="row contact-form" @submit="checkForm">
+
 								<!-- Form Select -->
 								<div id="input-subject" class="col-md-12 input-subject">
 									<p class="p-lg">Ne Hakkında:</p>
@@ -183,13 +180,13 @@
 								<!-- Contact Form Input -->
 								<div id="input-name" class="col-md-12">
 									<p class="p-lg">Adınız*:</p>
-									<input type="text" name="name" class="form-control name" placeholder="İsim*"
+									<input type="text" name="name" class="form-control name" placeholder="İsim"
 										v-model="name" />
 								</div>
 								<div id="input-tel" class="col-md-12">
 									<p class="p-lg">Telefon*:</p>
-									<input type="text" name="phone" class="form-control" v-mask="'###-###-####'"
-										v-model="telefon" />
+									<input type="tel" name="phone" class="form-control phone" v-model="telefon"
+										maxlength="10" v-mask="'###-###-####'" />
 								</div>
 
 								<div id="input-email" class="col-md-12">
@@ -197,7 +194,7 @@
 									<span>Lütfen e-posta adresinizin doğruluğunu dikkatlice kontrol
 										edin</span>
 									<input v-model="email" type="text" name="email" class="form-control email"
-										placeholder="Email*" />
+										placeholder="Email" />
 								</div>
 
 								<div id="input-message" class="col-md-12 input-message">
@@ -335,7 +332,13 @@
 	</div>
 	<!-- END PAGE CONTENT -->
 
+
 	<script>
+		// As a plugin
+		Vue.use(VueMask.VueMaskPlugin);
+
+		// Or as a directive
+		Vue.directive('mask', VueMask.VueMaskDirective);
 		const {
 			createApp
 		} = Vue;
@@ -354,28 +357,34 @@
 			methods: {
 
 				getData() {
-					axios.post('https://52.17.28.130/api/v1/public/tables/feedbacks/store', {
-						name_surname: this.name,
-						phone: this.telefon,
-						email_basic: this.email,
-						description: this.description,
-						state: 1,
-						column_set_id: 0,
-						id: 0
-					}).then(res => {
-						if (res.data.data.message == "success") {
-							console.log('girdi')
-							this.name = ''
-							this.telefon = ''
-							this.email = ''
-							this.description = ''
-						}
-						console.log(res.data.data)
-					})
+					if (this.name == '' && this.email == '' && this.description == '') {
+						alert('Alanlar Boş Girilemez')
+
+					} else {
+						axios.post('https://52.17.28.130/api/v1/public/tables/feedbacks/store', {
+							name_surname: this.name,
+							phone: this.telefon,
+							email_basic: this.email,
+							description: this.description,
+							state: 1,
+							column_set_id: 0,
+							id: 0
+						}).then(res => {
+							if (res.data.data.message == "success") {
+								console.log('girdi')
+								this.name = ''
+								this.telefon = ''
+								this.email = ''
+								this.description = ''
+								alert('Mailiniz İletildi')
+							}
+							console.log(res.data.data)
+						})
+
+					}
+
 				},
-				onsubmit() {
-					console.log(this.name, this.email, this.select);
-				}
+
 			},
 
 		}).mount('#page')
