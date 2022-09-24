@@ -155,7 +155,7 @@
 				<div class="row">
 					<div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
 						<div class="form-holder">
-							<form name="contactform" class="row contact-form" @submit="checkForm">
+							<form name="contact-form" class="row contact-form" @submit="checkForm" method="post">
 
 
 
@@ -164,12 +164,12 @@
 								<div id="input-name" class="col-md-12">
 									<p class="p-lg">Adınız*:</p>
 									<input type="text" name="name" class="form-control name" placeholder="İsim"
-										v-model="name" />
+										v-model="name" required autocomplete="off" />
 								</div>
 								<div id="input-tel" class="col-md-12">
 									<p class="p-lg">Telefon*:</p>
 									<input type="text" name="phone" class="form-control phone" id="phone"
-										v-model="telefon" placeholder="555-555-5555" />
+										v-model="telefon" placeholder="555-555-5555" required autocomplete="off" />
 								</div>
 
 								<div id="input-email" class="col-md-12">
@@ -177,18 +177,19 @@
 									<span>Lütfen e-posta adresinizin doğruluğunu dikkatlice kontrol
 										edin</span>
 									<input v-model="email" type="text" name="email" class="form-control email"
-										placeholder="Email" />
+										placeholder="Email" required autocomplete="off" />
 								</div>
 
 								<div id="input-message" class="col-md-12 input-message">
 									<p class="p-lg">Sorunuzu ayrıntılı olarak açıklayın*:</p>
-									<textarea class="form-control message" name="message" rows="6" v-model="description"
-										placeholder="Sorununuzu Detaylı Yazınız"></textarea>
+									<textarea required class="form-control message" name="message" rows="6"
+										v-model="description" placeholder="Sorununuzu Detaylı Yazınız" minlength="5"
+										autocomplete="off"></textarea>
 								</div>
 
 								<!-- Contact Form Button -->
 								<div class="col-md-12 mt-15 form-btn text-right">
-									<button type="button" @click="getData"
+									<button type="button" @click="getData" id="click"
 										class="btn btn-skyblue tra-skyblue-hover submit">
 										Gönder
 									</button>
