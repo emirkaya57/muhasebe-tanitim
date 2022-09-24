@@ -61,14 +61,10 @@
 	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-	<!-- v-mask-->
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/v-mask/dist/v-mask.min.js"></script>
-
-
 </head>
 
 <body>
+
 	<div id="loader-wrapper">
 		<div id="loading">
 			<span class="cssload-loader"><span class="cssload-loader-inner"></span></span>
@@ -161,21 +157,8 @@
 						<div class="form-holder">
 							<form name="contactform" class="row contact-form" @submit="checkForm">
 
-								<!-- Form Select -->
-								<div id="input-subject" class="col-md-12 input-subject">
-									<p class="p-lg">Ne Hakkında:</p>
-									<span>Bir konu seçin, böylece isteğinizi kime göndereceğimizi
-										bilelim:
-									</span>
-									<select id="inlineFormCustomSelect1" name="Subject" class="custom-select subject"
-										v-model="select">
-										<option>Kobi</option>
-										<option>Ön Muhasebe</option>
-										<option>Resmi Muhasebe</option>
-										<option>Program Kullanımı</option>
-										<option>Diğer</option>
-									</select>
-								</div>
+
+
 
 								<!-- Contact Form Input -->
 								<div id="input-name" class="col-md-12">
@@ -185,8 +168,8 @@
 								</div>
 								<div id="input-tel" class="col-md-12">
 									<p class="p-lg">Telefon*:</p>
-									<input type="tel" name="phone" class="form-control phone" v-model="telefon"
-										maxlength="10" v-mask="'###-###-####'" />
+									<input type="text" name="phone" class="form-control phone" id="phone"
+										v-model="telefon" />
 								</div>
 
 								<div id="input-email" class="col-md-12">
@@ -205,21 +188,17 @@
 
 								<!-- Contact Form Button -->
 								<div class="col-md-12 mt-15 form-btn text-right">
-									<button type="button" @click="getData "
+									<button type="button" @click="getData"
 										class="btn btn-skyblue tra-skyblue-hover submit">
 										Gönder
 									</button>
-								</div>
-
-								<!-- Contact Form Message -->
-								<div class="col-lg-12 contact-form-msg">
-									<span class="loading"></span>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
 				<!-- END CONTACT FORM -->
+
 			</div>
 			<!-- End container -->
 
@@ -286,6 +265,7 @@
 										</li>
 									</ul>
 								</div>
+
 							</div>
 
 							<!-- FOOTER LINKS -->
@@ -333,20 +313,19 @@
 	<!-- END PAGE CONTENT -->
 
 
-	<script>
-		// As a plugin
-		Vue.use(VueMask.VueMaskPlugin);
 
-		// Or as a directive
-		Vue.directive('mask', VueMask.VueMaskDirective);
+	<script>
 		const {
 			createApp
 		} = Vue;
+
 		createApp({
+
 			data() {
 				return {
 					data: [],
 					name: '',
+					toast: false,
 					telefon: '',
 					email: '',
 					description: ''
@@ -357,8 +336,9 @@
 			methods: {
 
 				getData() {
-					if (this.name == '' && this.email == '' && this.description == '') {
-						alert('Alanlar Boş Girilemez')
+					if (this.name == '' || this.email == '' || this.description == '') {
+
+						toastr.error('Alanlar Boş Bırakılamaz')
 
 					} else {
 						axios.post('https://52.17.28.130/api/v1/public/tables/feedbacks/store', {
@@ -388,6 +368,16 @@
 			},
 
 		}).mount('#page')
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+	<script>
+		document.getElementById('phone').addEventListener('input', function (e) {
+			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+			e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+		});
 	</script>
 
 
