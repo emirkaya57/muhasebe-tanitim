@@ -169,7 +169,7 @@
 								<div id="input-tel" class="col-md-12">
 									<p class="p-lg">Telefon*:</p>
 									<input type="text" name="phone" class="form-control phone" id="phone"
-										v-model="telefon" />
+										v-model="telefon" placeholder="555-555-5555" />
 								</div>
 
 								<div id="input-email" class="col-md-12">
@@ -337,7 +337,6 @@
 
 				getData() {
 					if (this.name == '' || this.email == '' || this.description == '') {
-
 						toastr.error('Alanlar Boş Bırakılamaz')
 
 					} else {
@@ -356,7 +355,7 @@
 								this.telefon = ''
 								this.email = ''
 								this.description = ''
-								alert('Mailiniz İletildi')
+								toastr.success('Mailiniz Gönderildi')
 							}
 							console.log(res.data.data)
 						})
