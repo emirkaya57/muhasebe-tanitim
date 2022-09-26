@@ -111,7 +111,7 @@
 
 												<!-- Links -->
 												<ul class="col-lg-6 link-list">
-													<li><a href="#">Doküman</a></li>
+													<li><a href="/kobi/dokuman/ana-sayfa.html">Doküman</a></li>
 													<li><a href="blog.html">Blog</a></li>
 													<li><a href="hakkimizda.html">Hakkımızda</a></li>
 													<li><a href="sss.html">SSS</a></li>
@@ -157,40 +157,44 @@
 				</div>
 				<!-- FEATURED POST -->
 				<div class="rel blog-post featured-post wide-post">
-					<div class="row d-flex align-items-center">
-
-						<div class="featured-badge text-center ico-30 bg_whitesmoke yellow-color">
-							<span class="flaticon-star"></span>
-						</div>
-
-						<!-- BLOG POST IMAGE -->
-						<div class="col-lg-7 blog-post-img">
-							<img class="img-fluid" src="images/blog/post-1-img.jpg" alt="blog-post-image" />
-						</div>
-
-						<!-- BLOG POST TEXT -->
-						<div class="col-lg-5 blog-post-txt">
-
-							<!-- Post Tag -->
-							<p class="p-md post-tag">SiberHesap Blog</p>
-
-							<!-- Post Link -->
-							<h5 class="h5-xl">
-								<a href="./blog-detay.html">Tempor sapien donec gravida a suscipit and porta justo
-									vitae</a>
-							</h5>
-							<!-- Text -->
-							<p class="p-md">Aliqum mullam blandit vitae and tempor sapien and donec lipsum gravida a
-								porta
-								undo velna dolor in cubilia laoreet
-							</p>
-							<!-- Post Meta -->
-							<div class="post-meta">
-								<div class="post-author-avatar"><img src="images/post-author-1.jpg" alt="author-avatar">
-								</div>
-								<p>12 min read</p>
+					<div class="row d-flex align-items-center" v-for="(val, key) in data1" :key="key">
+						<div v-if="key==0" class="d-flex">
+							<div class="featured-badge text-center ico-30 bg_whitesmoke yellow-color">
+								<span class="flaticon-star"></span>
 							</div>
-						</div> <!-- END BLOG POST TEXT -->
+
+							<!-- BLOG POST IMAGE -->
+							<div class="col-lg-7 blog-post-img">
+								<img class="img-fluid" :src="getBlogImage(val.image)" alt="blog-post-image" />
+							</div>
+
+							<!-- BLOG POST TEXT -->
+							<div class="col-lg-5 blog-post-txt">
+
+								<!-- Post Tag -->
+								<p class="p-md post-tag">SiberHesap Blog</p>
+
+								<!-- Post Link -->
+								<h5 class="h5-xl">
+									<h3>{{val.title}}</h3>
+								</h5>
+								<!-- Text -->
+								<div>
+									<p class="p-md">{{val.content}}
+								</div>
+								</p>
+								<!-- Post Meta -->
+								<div class="post-meta">
+									<div class="post-author-avatar"><img src="images/post-author-1.jpg"
+											alt="author-avatar">
+									</div>
+									<div>
+										<p>{{val.updated_at}}</p>
+									</div>
+								</div>
+							</div> <!-- END BLOG POST TEXT -->
+						</div>
+						<template v-else></template>
 					</div> <!-- End row -->
 				</div> <!-- END FEATURED POST -->
 				<!-- POSTS WRAPPER -->
@@ -205,6 +209,7 @@
 						<!-- BLOG POST #1 -->
 						<div class="col-md-6 col-lg-4" v-for="b in data.records" :key="b">
 							<div class="blog-post mb-40 wow fadeInUp" data-wow-delay="0.4s">
+
 
 								<!-- BLOG POST IMAGE -->
 								<div class="blog-post-img">
@@ -305,7 +310,7 @@
 							<!-- Footer Links -->
 							<ul class="clearfix">
 								<li>
-									<p class="p-md"><a href="#">Doküman</a></p>
+									<p class="p-md"><a href="/kobi/dokuman/ana-sayfa.html">Doküman</a></p>
 								</li>
 								<li>
 									<p class="p-md"><a href="blog.html">Blog</a></p>
@@ -397,7 +402,8 @@
 		createApp({
 			data() {
 				return {
-					data: {},
+					data: [],
+					data1: [],
 					blogImgUrl: "https://52.17.28.130/uploads/",
 					params: {
 						limit: 6,
@@ -428,12 +434,21 @@
 						JSON.parse(img)[0].file_name
 					);
 				},
+				getBlogImage(img) {
+					return (
+						this.blogImgUrl +
+						JSON.parse(img)[0].destination_path +
+						"m_" +
+						JSON.parse(img)[0].file_name
+					);
+				},
 				getData() {
 					console.log('test');
 					axios.post('https://52.17.28.130/api/v1/public/tables/blog', {
 						params: JSON.stringify(this.params)
 					}).then(res => {
 						this.data = res.data.data
+						this.data1 = res.data.data.records
 					})
 				}
 			}
