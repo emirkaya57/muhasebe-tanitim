@@ -58,8 +58,8 @@
 	<!-- RESPONSIVE CSS -->
 	<link href="css/responsive.css" rel="stylesheet" />
 
-	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
 
 </head>
 
@@ -164,7 +164,7 @@
 								<div id="input-name" class="col-md-12">
 									<p class="p-lg">Adınız*:</p>
 									<input type="text" name="name" class="form-control name" placeholder="İsim"
-										v-model="name" required autocomplete="off" />
+										v-model="this.name" required autocomplete="off" />
 								</div>
 								<div id="input-tel" class="col-md-12">
 									<p class="p-lg">Telefon*:</p>
@@ -315,13 +315,17 @@
 
 
 
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+
 	<script>
 		const {
 			createApp
 		} = Vue;
-
 		createApp({
-
 			data() {
 				return {
 					data: [],
@@ -330,16 +334,12 @@
 					telefon: '',
 					email: '',
 					description: ''
-
 				}
 			},
-
 			methods: {
-
 				getData() {
 					if (this.name == '' || this.email == '' || this.description == '') {
 						toastr.error('Alanlar Boş Bırakılamaz')
-
 					} else {
 						axios.post('https://52.17.28.130/api/v1/public/tables/feedbacks/store', {
 							name_surname: this.name,
@@ -360,19 +360,11 @@
 							}
 							console.log(res.data.data)
 						})
-
 					}
-
 				},
-
 			},
-
 		}).mount('#page')
 	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
 	<script>
 		document.getElementById('phone').addEventListener('input', function (e) {
 			var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
