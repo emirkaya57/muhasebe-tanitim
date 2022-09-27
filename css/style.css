@@ -5471,6 +5471,10 @@ img.footer-logo {
   margin-bottom: 0;
 }
 
+.blog-post-img .images-blog{
+  object-fit: cover;
+  height: 200px;
+}
 .bottom-footer-list li:after { 
   content: "|"; 
   padding-left: 11px; 
