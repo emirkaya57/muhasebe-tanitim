@@ -387,7 +387,7 @@
 				return {
 					data: [],
 					data1: [],
-					blogImgUrl: "https://52.17.28.130/uploads/",
+					blogImgUrl: "https://blog.siberhesap.com/uploads/",
 					params: {
 						limit: 6,
 						page: 1,
@@ -428,7 +428,7 @@
 				getData() {
 					console.log("test");
 					axios
-						.post("https://52.17.28.130/api/v1/public/tables/blog", {
+						.post("https://blog.siberhesap.com/api/v1/public/tables/blog", {
 							params: JSON.stringify(this.params),
 						})
 						.then((res) => {

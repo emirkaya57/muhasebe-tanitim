@@ -333,7 +333,7 @@
 					if (this.name == '' || this.email == '' || this.description == '') {
 						toastr.error('Alanlar Boş Bırakılamaz')
 					} else {
-						axios.post('https://52.17.28.130/api/v1/public/tables/feedbacks/store', {
+						axios.post('https://blog.siberhesap.com/api/v1/public/tables/feedbacks/store', {
 							name_surname: this.name,
 							phone: this.telefon,
 							email_basic: this.email,

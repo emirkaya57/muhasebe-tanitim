@@ -318,7 +318,7 @@
 			data() {
 				return {
 					data: {},
-					blogImgUrl: "https://52.17.28.130/uploads/",
+					blogImgUrl: "https://blog.siberhesap.com/uploads/",
 					params: {
 						limit: 10,
 						page: 1,
@@ -351,7 +351,7 @@
 					let pathname = window.location.search;
 					let id = pathname.slice(4, 6)
 					console.log(id);
-					axios.post('https://52.17.28.130/api/v1/public/tables/blog/' + id, {
+					axios.post('https://blog.siberhesap.com/api/v1/public/tables/blog/' + id, {
 						params: JSON.stringify(this.params)
 					}).then(res => {
 						this.data = res.data.data.record
