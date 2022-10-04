@@ -5175,6 +5175,9 @@ h5.posts-category {
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
+.paragraf_cevap{
+  text-indent: 50px;
+}
 
 /*------------------------------------------*/
 /*  Contact Form Textarea
@@ -5184,6 +5187,7 @@ h5.posts-category {
 .contact-form textarea.form-control { 
   padding: 20px 15px;
 }
+
 
 /*------------------------------------------*/
 /*  Contact Form Placeholder
