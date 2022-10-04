@@ -209,7 +209,7 @@
 							<div class="blog-post mb-40 wow fadeInUp" data-wow-delay="0.4s">
 								<!-- BLOG POST IMAGE -->
 								<div class="blog-post-img">
-									<img class="img-fluid w-100 images-blog" :src="getImage(b.image)"
+									<img class="img-fluid w-100 images-blog" :title="b.title" src="getImage(b.image)"
 										:alt="'SiberHesap'  + b.title" />
 								</div>
 
@@ -224,9 +224,8 @@
 									</h5>
 
 									<!-- Text -->
-									<p class="p-md">
-										Aliqum mullam blandit vitae and tempor sapien and donec
-										lipsum gravida porta undo velna dolor
+									<p class="p-md blog_paragraf">
+										{{b.content}}
 									</p>
 
 									<!-- Post Meta -->

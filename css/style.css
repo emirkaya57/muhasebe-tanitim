@@ -5176,7 +5176,13 @@ h5.posts-category {
   border-radius: 6px;
 }
 .paragraf_cevap{
-  text-indent: 50px;
+  text-indent: 1.5rem;
+  text-align: justify;
+}
+.blog_paragraf{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /*------------------------------------------*/
