@@ -159,8 +159,8 @@
 				<div class="faqs-2-questions pc-15">
 					<div class="row">
 						<!-- QUESTIONS HOLDER -->
-						<div class="col-lg-6">
-							<div class="questions-holder pc-10" v-for="soru in data.records" :key="soru">
+						<div class="col-12">
+							<div class=" questions-holder pc-10" v-for="soru in data.records" :key="soru">
 								<!-- QUESTION #1 -->
 								<div class="question wow fadeInUp" data-wow-delay="0.4s">
 									<!-- Question -->
@@ -337,7 +337,7 @@
 				return {
 					data: [],
 					params: {
-						limit: 4,
+						limit: 10,
 						page: 1,
 						sorts: {},
 						filters: {},
