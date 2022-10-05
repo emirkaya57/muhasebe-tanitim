@@ -5184,6 +5184,49 @@ h5.posts-category {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.icons .icon{
+  width: 200px;
+}
+.icons .icon path{
+  fill: transparent;
+  stroke:#000 ;
+  
+}
+.icons .icon.share path{
+  fill: transparent;
+  stroke:#000 ;
+  stroke-width: 15;
+  
+}
+.icons .icon.heart path{
+  stroke-dasharray: 80;
+  stroke-dashoffset: 0;
+  
+  
+}
+.icons .icon.heart:hover path{
+  animation: animate-heart 1s linear forwards;
+  
+}
+@keyframes  animate-heart{
+  0%{
+    stroke-dashoffset: -10;
+  }
+
+  40%{
+    stroke-dashoffset: -80;
+  }
+  80%{
+    stroke-dashoffset: -80;
+  }
+  100%{
+    stroke-dashoffset: -80;
+    fill: red;
+  }
+
+}
+
+
 
 /*------------------------------------------*/
 /*  Contact Form Textarea
