@@ -163,8 +163,9 @@
 							</div>
 
 							<!-- BLOG POST IMAGE -->
-							<div class="col-lg-7 blog-post-img">
-								<img class="img-fluid" :src="getBlogImage(val.image)" :alt="'SiberHesap' + val.title" />
+							<div class="col-lg-7 blog-post-img d-flex">
+								<img class="img-fluid blog_imagess" :src="getBlogImage(val.image)"
+									:alt="'SiberHesap' + val.title" />
 							</div>
 
 							<!-- BLOG POST TEXT -->
@@ -177,8 +178,8 @@
 									<h3>{{val.title}}</h3>
 								</h5>
 								<!-- Text -->
-								<div>
-									<p class="p-md text-justify">{{val.content}}</p>
+								<div class="paragraf_div">
+									<p class="p-md text-align-justify ">{{val.content}}</p>
 								</div>
 
 								<!-- Post Meta -->
