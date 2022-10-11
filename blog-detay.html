@@ -205,6 +205,54 @@
 								</div>
 							</div>
 
+							<!--Son Bloglar-->
+
+							<div class="posts-wrapper p-0 mt-100">
+								<!-- BLOG POSTS CATEGORY -->
+								<div class="row">
+									<div class="col-md-9">
+										<h5 class="h5-lg posts-category">Son Bloglar/Haberler</h5>
+									</div>
+								</div>
+								<div class="row">
+									<!-- BLOG POST #1 -->
+									<div class="col-md-6 col-lg-4" v-for="b in blog.records" :key="b">
+										<div class="blog-post mb-40 wow fadeInUp" data-wow-delay="0.4s">
+											<!-- BLOG POST IMAGE -->
+											<div class="blog-post-img">
+												<img class="img-fluid w-100 images-blog" :title="b.title"
+													:src="getImage(b.image)" :alt="'SiberHesap'  + b.title" />
+											</div>
+
+											<!-- BLOG POST TEXT -->
+											<div class="blog-post-txt">
+												<!-- Post Tag -->
+												<p class="p-md post-tag">SiberHesap Blog</p>
+
+												<!-- Post Link -->
+												<h5 class="h5-xs">
+													<a :href="'/blog-detay.html?id=' + b.id">{{b.title}}</a>
+												</h5>
+
+												<!-- Text -->
+												<p class="p-md blog_paragraf">
+													{{b.content}}
+												</p>
+
+												<!-- Post Meta -->
+
+												<div class="d-flex justify-content-between">
+													<a :href="'/blog-detay.html?id=' + b.id">Detay</a>
+													<p>{{b.updated_at}}</p>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<!-- END  BLOG POST #1 -->
+								</div>
+								<!-- End row -->
+							</div>
 
 
 
@@ -337,25 +385,47 @@
 				return {
 					isActive: false,
 					data: {},
+					blog: {},
+					blog_id: 0,
+					begeni: {},
 					blogImgUrl: "https://blog.siberhesap.com/uploads/",
+					begeniParams: {
+
+					},
 					params: {
-						limit: 10,
+						limit: 3,
 						page: 1,
 						sorts: {},
 						filters: {},
 						column_set_id: 0,
-
+						column_array_id: 0,
+						column_array_id_query: 0
 					}
 				}
 			},
 
 			created() {
-				console.log('test 2');
+
 				this.getData();
+
+			},
+			mounted() {
+				this.getblog();
 			},
 			methods: {
 				clickIcon() {
 					this.isActive = !this.isActive
+					axios.post('https://blog.siberhesap.com/api/v1/public/tables/blog_begeni/store', {
+						blog_id: this.blog_id,
+						state: 1,
+						column_set_id: 0,
+						id: 0
+
+					}).then(res => {
+						console.log(res);
+					}).catch(e => {
+						console.log(e);
+					})
 				},
 				getImage(img) {
 					console.log(img);
@@ -368,6 +438,14 @@
 						);
 					}
 
+
+				},
+				getblog() {
+					axios.post('https://blog.siberhesap.com/api/v1/public/tables/blog', {
+						params: JSON.stringify(this.params)
+					}).then(res => {
+						this.blog = res.data.data
+					})
 				},
 				getData() {
 					let pathname = window.location.search;

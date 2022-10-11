@@ -159,19 +159,19 @@
 				<!-- FEATURED POST -->
 				<div class="rel blog-post featured-post wide-post">
 					<div class="row d-flex align-items-center" v-for="(val, key) in data1" :key="key">
-						<div v-if="key==0" class="d-flex">
-							<div class="featured-badge text-center ico-30 bg_whitesmoke yellow-color">
+						<div v-if="key==0" class="row">
+							<div class="featured-badge  text-center ico-30 bg_whitesmoke yellow-color">
 								<span class="flaticon-star"></span>
 							</div>
 
 							<!-- BLOG POST IMAGE -->
-							<div class="col-lg-7 blog-post-img d-flex">
-								<img class="img-fluid blog_imagess" :src="getBlogImage(val.image)"
+							<div class="col-12 col-lg-6 blog-post-img">
+								<img class="img-fluid blog-images" :src="getBlogImage(val.image)"
 									:alt="'SiberHesap' + val.title" />
 							</div>
 
 							<!-- BLOG POST TEXT -->
-							<div class="col-lg-5 blog-post-txt">
+							<div class="col-12 col-lg-6 blog-post-txt">
 								<!-- Post Tag -->
 								<p class="p-md post-tag">SiberHesap Blog</p>
 
@@ -180,12 +180,13 @@
 									<h3>{{val.title}}</h3>
 								</h5>
 								<!-- Text -->
-								<div class="paragraf_div">
-									<p class="p-md text-align-justify ">{{val.content}}</p>
+								<div class="">
+									<p class="text-align-justify">{{val.content}}</p>
 								</div>
 
 								<!-- Post Meta -->
 								<div class="post-meta">
+
 									<div>
 										<p>{{val.updated_at}}</p>
 									</div>
@@ -232,9 +233,14 @@
 									</p>
 
 									<!-- Post Meta -->
-									<div class="post-meta">
+
+									<div class="d-flex justify-content-between">
+										<div class="blog-details">
+											<a :href="'/blog-detay.html?id=' + b.id">Detay</a>
+										</div>
 										<p>{{b.updated_at}}</p>
 									</div>
+
 								</div>
 							</div>
 						</div>
@@ -246,7 +252,7 @@
 			</div>
 			<!-- End container -->
 			<!-- GEOMETRIC OVERLAY -->
-			<div class="bg_fixed geometric_overlay"></div>
+			<div class=" bg_fixed geometric_overlay"></div>
 		</section>
 		<!-- END BLOG POSTS LISTING -->
 		<!-- PAGE PAGINATION

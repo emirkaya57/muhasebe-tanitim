@@ -5187,13 +5187,17 @@ h5.posts-category {
 .icons .icon{
   width: 200px;
 }
-.blog-post-img .blog_imagess {
+/* .blog-post-img .blog_imagess {
   object-fit: cover;
-}
+} */
 .icons .icon.heart.aktif i{
   transition: ease 500ms;
 color: red; 
 
+}
+.blog-images{
+  height: 100% !important;
+  object-fit: cover;
 }
 
 
