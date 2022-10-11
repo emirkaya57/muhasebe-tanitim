@@ -797,6 +797,12 @@
 					</div>
 
 
+
+					<div class="col-md-5 col-lg-6">
+						<div class="img-block left-column pc-20 mb-40 wow fadeInRight" data-wow-delay="0.6s">
+							<img class="img-fluid" src="images/img-03.png" alt="content-image" />
+						</div>
+					</div>
 					<!-- TEXT BLOCK -->
 					<div class="col-md-7 col-lg-6">
 						<div class="txt-block right-column mb-40 wow fadeInLeft" data-wow-delay="0.6s">
@@ -815,20 +821,11 @@
 						</div>
 					</div>
 
-					<div class="col-md-5 col-lg-6">
-						<div class="img-block left-column pc-20 mb-40 wow fadeInRight" data-wow-delay="0.6s">
-							<img class="img-fluid" src="images/img-03.png" alt="content-image" />
-						</div>
-					</div>
 
 
 
 
-					<div class="col-md-5 col-lg-6">
-						<div class="img-block left-column pc-20 mb-40 wow fadeInRight" data-wow-delay="0.6s">
-							<img class="img-fluid" src="images/img-03.png" alt="content-image" />
-						</div>
-					</div>
+
 
 					<!-- TEXT BLOCK -->
 					<div class="col-md-7 col-lg-6">
@@ -845,6 +842,12 @@
 								ilave eğitim gerektirmeyen yapısıyla çok tercih edilmektedir
 							</p>
 
+						</div>
+					</div>
+
+					<div class="col-md-5 col-lg-6">
+						<div class="img-block left-column pc-20 mb-40 wow fadeInRight" data-wow-delay="0.6s">
+							<img class="img-fluid" src="images/img-03.png" alt="content-image" />
 						</div>
 					</div>
 
@@ -1133,7 +1136,7 @@
 					<div class="col-lg-10 offset-lg-1">
 						<div class="section-title text-center mb-70">
 							<!-- Title -->
-							<h2 class="h2-md">Got Questions? Look Here</h2>
+							<h2 class="h2-md">Sık Sorulan Sorular</h2>
 
 							<!-- Text -->
 							<p class="p-xl">
@@ -1149,125 +1152,24 @@
 				<div class="faqs-2-questions pc-15">
 					<div class="row">
 						<!-- QUESTIONS HOLDER -->
-						<div class="col-lg-6">
-							<div class="questions-holder pc-10">
+						<div class="col-lg-12">
+							<div class="questions-holder pc-10" v-for="s in data.records">
 								<!-- QUESTION #1 -->
 								<div class="question wow fadeInUp" data-wow-delay="0.4s">
 									<!-- Question -->
 									<h5 class="h5-sm">
-										Can I see NordEx in action before purchasing it?
+										{{s.content}}
 									</h5>
 
 									<!-- Answer -->
 									<p class="p-lg">
-										Etiam amet mauris suscipit in odio integer congue metus
-										vitae arcu mollis blandit ultrice ligula egestas and magna
-										suscipit lectus magna suscipit luctus blandit vitae
+										{{s.cevaplar_id}}
 									</p>
 								</div>
 
-								<!-- QUESTION #2 -->
-								<div class="question wow fadeInUp" data-wow-delay="0.6s">
-									<!-- Question -->
-									<h5 class="h5-sm">
-										What are the requirements for using NordEx?
-									</h5>
-
-									<!-- Answer -->
-									<p class="p-lg">
-										An enim nullam tempor sapien gravida donec ipsum enim an
-										porta justo integer at velna vitae auctor integer congue
-										undo magna at pretium purus pretium ligula
-									</p>
-								</div>
-
-								<!-- QUESTION #3 -->
-								<div class="question wow fadeInUp" data-wow-delay="0.8s">
-									<!-- Question -->
-									<h5 class="h5-sm">
-										Can I use NordEx on different devices?
-									</h5>
-
-									<!-- Answer -->
-									<ul class="simple-list">
-										<li class="list-item">
-											<p class="p-lg">
-												Fringilla risus, luctus mauris orci auctor purus
-												ligula euismod pretium purus pretium rutrum tempor
-												sapien
-											</p>
-										</li>
-
-										<li class="list-item">
-											<p class="p-lg">
-												Nemo ipsam egestas volute turpis dolores ut aliquam
-												quaerat sodales sapien undo pretium a purus
-											</p>
-										</li>
-									</ul>
-								</div>
 							</div>
 						</div>
-						<!-- END QUESTIONS HOLDER -->
 
-						<!-- QUESTIONS HOLDER -->
-						<div class="col-lg-6">
-							<div class="questions-holder pc-10">
-								<!-- QUESTION #4 -->
-								<div class="question wow fadeInUp" data-wow-delay="0.4s">
-									<!-- Question -->
-									<h5 class="h5-sm">Do you have a free trial?</h5>
-
-									<!-- Answer -->
-									<p class="p-lg">
-										Cubilia laoreet augue egestas and luctus donec curabite
-										diam vitae dapibus libero and quisque gravida donec neque.
-										Blandit justo aliquam molestie nunc sapien justo
-									</p>
-								</div>
-
-								<!-- QUESTION #5 -->
-								<div class="question wow fadeInUp" data-wow-delay="0.6s">
-									<!-- Question -->
-									<h5 class="h5-sm">How does NordEx handle my privacy?</h5>
-
-									<!-- Answer -->
-									<p class="p-lg">
-										Etiam amet mauris suscipit sit amet in odio. Integer
-										congue leo metus. Vitae arcu mollis blandit ultrice ligula
-									</p>
-
-									<!-- Answer -->
-									<p class="p-lg">
-										An enim nullam tempor sapien gravida donec congue leo
-										metus. Vitae arcu mollis blandit integer at velna
-									</p>
-								</div>
-
-								<!-- QUESTION #6 -->
-								<div class="question wow fadeInUp" data-wow-delay="0.8s">
-									<!-- Question -->
-									<h5 class="h5-sm">I have an issue with my account</h5>
-
-									<!-- Answer -->
-									<ul class="simple-list">
-										<li class="list-item">
-											<p class="p-lg">
-												Fringilla risus, luctus mauris orci auctor purus
-											</p>
-										</li>
-
-										<li class="list-item">
-											<p class="p-lg">
-												Quaerat sodales sapien euismod blandit purus and ipsum
-												primis in cubilia laoreet augue luctus
-											</p>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- END QUESTIONS HOLDER -->
 					</div>
 					<!-- End row -->
 				</div>
@@ -1352,68 +1254,6 @@
 		</section>
 		<!-- END DOWNLOAD-1 -->
 
-		<!-- BLOG-1
-			============================================= -->
-		<!-- <section id="blog-1" class="wide-60 blog-section division">
-			<div class="container">
-		
-				<div class="row">
-					<div class="col-lg-10 offset-lg-1">
-						<div class="section-title text-center mb-70">
-						
-							<h2 class="h2-md">Our Stories & Latest News</h2>
-
-						
-							<p class="p-xl">
-								Aliquam a augue suscipit, luctus neque purus ipsum neque at
-								dolor primis libero tempus, blandit and cursus varius magna
-								tempus a dolor
-							</p>
-						</div>
-					</div>
-				</div> -->
-
-		<!-- BLOG POSTS -->
-		<!-- 	<div class="row">
-					
-					<div id="b-post-1" class="col-md-6 col-lg-4">
-						<div class="blog-post mb-40 wow fadeInUp" data-wow-delay="0.4s">
-						
-							<div class="blog-post-img">
-								<img class="img-fluid" src="images/blog/post-1-img.jpg" alt="blog-post-image" />
-							</div>
-
-						
-							<div class="blog-post-txt">
-					
-								<p class="p-md post-tag">NordEx News</p>
-
-							
-								<h5 class="h5-sm">
-									<a href="single-post.html">Tempor sapien donec gravida ipsum a porta justo vitae</a>
-								</h5>
-
-								<p class="p-md">
-									Aliqum mullam blandit vitae tempor sapien a donec lipsum
-									gravida porta velna dolor vitae auctor congue
-								</p>
-
-						
-								<div class="post-meta">
-									<div class="post-author-avatar">
-										<img src="images/post-author-1.jpg" alt="author-avatar" />
-									</div>
-									<p>12 min read</p>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-				
-			</div>
-		
-		</section> -->
 
 		<!-- MORE APPS-1
 			============================================= -->
@@ -1575,6 +1415,47 @@
 		<!-- END FOOTER-4 -->
 	</div>
 	<!-- END PAGE CONTENT -->
+	<script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script>
+		const {
+			createApp
+		} = Vue;
+		createApp({
+			data() {
+				return {
+					data: {},
+
+					params: {
+						limit: 3,
+						page: 1,
+						sorts: {},
+						filters: {},
+						column_array_id: 0,
+						column_array_id_query: 0
+					}
+
+				};
+			},
+
+			mounted() {
+				this.getData()
+			},
+
+			methods: {
+				getData() {
+					axios
+						.post("https://blog.siberhesap.com/api/v1/public/tables/sssorular", {
+							params: JSON.stringify(this.params),
+						})
+						.then((res) => {
+							console.log(res);
+							this.data = res.data.data;
+						});
+				},
+			},
+		}).mount("#page");
+	</script>
 
 	<!-- EXTERNAL SCRIPTS
 		============================================= -->
