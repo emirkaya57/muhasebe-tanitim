@@ -3828,7 +3828,7 @@ h2.statistic-number {
 }
 
 #pricing-2 .pricing-plan span {
-  font-size: 54px;
+  font-size: 45px;
 }
 
 .pricing-plan sup {
@@ -3841,7 +3841,7 @@ h2.statistic-number {
 
 #pricing-2 .pricing-plan sup {
   font-size: 35px;
-  top: -7px;
+  top: 0px;
   right: 3px;
 }
 
@@ -3851,7 +3851,9 @@ h2.statistic-number {
   top: 0px;
   left: 0;
 }
-
+.pricing-plan:hover{
+  box-shadow: -1px 7px 36px -7px rgba(0,0,0,0.20);
+}
 
 #pricing-2 .pricing-plan sup.validity span {
   position: relative;
