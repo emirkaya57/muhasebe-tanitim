@@ -172,7 +172,11 @@
 					<div class="col-lg-10 offset-lg-1">
 						<div class="single-post-wrapper">
 
-
+							<div>
+								<h2 class="text-center">
+									{{data.title}}
+								</h2>
+							</div>
 
 
 							<!-- BLOG POST INNER IMAGE -->
@@ -218,6 +222,7 @@
 									<!-- BLOG POST #1 -->
 									<div class="col-md-6 col-lg-4" v-for="b in blog.records" :key="b">
 										<div class="blog-post mb-40 wow fadeInUp" data-wow-delay="0.4s">
+
 											<!-- BLOG POST IMAGE -->
 											<div class="blog-post-img">
 												<img class="img-fluid w-100 images-blog" :title="b.title"
