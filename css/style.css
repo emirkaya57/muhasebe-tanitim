@@ -479,6 +479,13 @@ body {
   left: 0;
   width: 100%;
 }
+.cards-images{
+  max-width:100% !important;
+}
+
+.list-item p {
+  margin-bottom: 4px;
+}
 
 .geometric_overlay {
   position: absolute;
@@ -1817,6 +1824,7 @@ h5.sm-title {
   z-index: 99999999;
 }
 
+
 #loading {
   background-color: #fff;
   height: 100%;
@@ -1835,7 +1843,6 @@ h5.sm-title {
   margin-left: -35px;
   width: 70px;
   height: 70px;
-  border: 6px solid #007afc;
   animation: cssload-loader 3.9s infinite ease;
   -o-animation: cssload-loader 3.9s infinite ease;
   -ms-animation: cssload-loader 3.9s infinite ease;
@@ -1861,20 +1868,10 @@ h5.sm-title {
     transform: rotate(0deg);
   }
   
-  25% {
-    transform: rotate(180deg);
-  }
-  
-  50% {
-    transform: rotate(180deg);
-  }
-  
-  75% {
-    transform: rotate(360deg);
-  }
+
   
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -1882,21 +1879,10 @@ h5.sm-title {
   0% {
     transform: rotate(0deg);
   }
-  
-  25% {
-    transform: rotate(180deg);
-  }
-  
-  50% {
-    transform: rotate(180deg);
-  }
-  
-  75% {
-    transform: rotate(360deg);
-  }
+ 
   
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -1905,20 +1891,10 @@ h5.sm-title {
     transform: rotate(0deg);
   }
   
-  25% {
-    transform: rotate(180deg);
-  }
   
-  50% {
-    transform: rotate(180deg);
-  }
-  
-  75% {
-    transform: rotate(360deg);
-  }
   
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -1927,20 +1903,9 @@ h5.sm-title {
     transform: rotate(0deg);
   }
   
-  25% {
-    transform: rotate(180deg);
-  }
-  
-  50% {
-    transform: rotate(180deg);
-  }
-  
-  75% {
-    transform: rotate(360deg);
-  }
   
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -1949,20 +1914,8 @@ h5.sm-title {
     transform: rotate(0deg);
   }
   
-  25% {
-    transform: rotate(180deg);
-  }
-  
-  50% {
-    transform: rotate(180deg);
-  }
-  
-  75% {
-    transform: rotate(360deg);
-  }
-  
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
 }
 

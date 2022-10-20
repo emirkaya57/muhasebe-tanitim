@@ -746,7 +746,8 @@
 
   #content-14.aliceblue-shape, #content-14.whitesmoke-shape { padding-top: 80px; }
 
-  .content-section .img-block.left-column, .content-5-img { position: relative; left: -60%; }
+ 
+  .content-section .img-block.left-column, .content-5-img {  left: -60%; }
   .content-section .img-block img, .content-5-img img, .content-6-img img { display: inline-block; max-width: none; width: 160%; }
   .content-12-img { margin-right: 0; margin-bottom: -40px; }
 
