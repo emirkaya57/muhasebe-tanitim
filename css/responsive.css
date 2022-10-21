@@ -679,11 +679,12 @@
   .hero-7-img img { width: 100%; max-width: none; display: inline-block; }
   .hero-8-img { padding: 0 25px; margin-top: -130px; margin-bottom: 40px; }
   .hero-9-img { margin-left: -70%; }
-  .hero-9-img img { width: 100%; max-width: none; display: inline-block; }
+  .hero-9-img img { width: 65%; /* max-width: none; */ display: inline-block; position: relative; left: 90px; }
   .hero-10-img img { width: 150%; position: relative; max-width: none; display: inline-block; }
   .hero-11-img { margin-top: 30px; }
   .hero-12-img img { width: 150%; position: relative; max-width: none; display: inline-block; }
 
+  
   /*------------------------------------------*/
   /*  CONTENT
   /*------------------------------------------*/ 
@@ -748,7 +749,7 @@
 
  
   .content-section .img-block.left-column, .content-5-img {  left: -60%; }
-  .content-section .img-block img, .content-5-img img, .content-6-img img { display: inline-block; max-width: none; width: 160%; }
+  .content-section .img-block img, .content-5-img img, .content-6-img img { display: inline-block; /* max-width: none; */ width: 160%; }
   .content-12-img { margin-right: 0; margin-bottom: -40px; }
 
   .cbox-txt { padding-left: 20px; }

@@ -3275,7 +3275,7 @@ h5.sm-title {
 }
 
 .content-13-img img {
-  max-width: none;
+ /*  max-width: none; */
   display: inline-block;
 }
 
