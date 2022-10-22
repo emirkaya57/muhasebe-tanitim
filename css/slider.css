@@ -6,9 +6,12 @@
     width: 100%;
     background-attachment: fixed;
 }
+
+
 .carousel-inner{
   background: url('/images/background2.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
 }
 #myCarousel h4{
 	font-size:50px;
