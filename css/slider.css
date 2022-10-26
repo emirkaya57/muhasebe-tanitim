@@ -9,7 +9,7 @@
 
 
 .carousel-inner{
-  background: url('/images/economist-office.jpg');
+  background: url('/images//background2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -40,7 +40,7 @@
     animation-fill-mode: both;
 }
 #myCarousel .containers {position: absolute;
-    left: 15%;
+    left: 10%;
     top: 25%;  }
 #myCarousel .carousel-item{height:100vh }
 #myCarousel{position:relative; z-index:1; background:url(https://i.imgur.com/6axE29k.jpg) center center no-repeat; background-size:cover; }
