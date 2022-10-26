@@ -18,11 +18,10 @@
     
 }
 .yaziDiv{
-   
     justify-content: center;
 }
 .YapimButton{
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 50%;
 }
