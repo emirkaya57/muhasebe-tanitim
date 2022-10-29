@@ -278,9 +278,9 @@
 
   /* Pricing */
   #pricing-1 .pricing-row { padding: 0 3%; }
-  #pricing-2 .pricing-row .col-md-4, #pricing-3 .col-md-4 { padding-left: 8px; padding-right: 8px; }
-  #pricing-2 .pricing-plan { padding: 45px 30px 40px; }
-  #pricing-3 .pricing-plan { padding: 50px 30px 45px; }
+  #pricing-2 .pricing-row .col-md-4, #pricing-3 .col-md-4 { padding-left: 8px; padding-right: 8px; height: 551px; }
+  #pricing-2 .pricing-plan { padding: 45px 30px 40px;  height: 551px;}
+  #pricing-3 .pricing-plan { padding: 50px 30px 45px; height: 551px; }
   .pricing-plan span { font-size: 56px; }
   .pricing-plan sup {font-size: 34px; }
 
@@ -807,9 +807,9 @@
   .reviews-download-btn .store img { max-height: 50px; }
 
   /* Pricing */
-  #pricing-2 .pricing-row .col-md-4, #pricing-3 .col-md-4 { padding-left: 8px; padding-right: 8px; }
-  #pricing-2 .pricing-plan { padding: 45px 20px 40px; }
-  #pricing-3 .pricing-plan { padding: 35px 15px; }
+  #pricing-2 .pricing-row .col-md-4, #pricing-3 .col-md-4 { padding-left: 8px; padding-right: 8px; height: 551px; }
+  #pricing-2 .pricing-plan { padding: 45px 20px 40px; height: 551px; }
+  #pricing-3 .pricing-plan { padding: 35px 15px; height: 551px;}
   #pricing-3 .pricing-plan h5.h5-md { font-size: 1.20rem; }
   .pricing-plan span { font-size: 56px; }
   #pricing-3 .pricing-plan span { font-size: 48px; }
@@ -882,7 +882,7 @@
   .download-6-txt p { padding: 0 5%; }
 
   .download-section .img-block.right-column { position: relative; left: -60%; }
-  .download-section .img-block img { display: inline-block; max-width: none; width: 160%; }
+  .download-section .img-block img { display: inline-block; width: 120%; position: relative; left: 100px; }
 
   /* Newsletter */
   #newsletter-1.pb-20, #newsletter-1.pb-30 { padding-bottom: 0; }
