@@ -682,7 +682,7 @@
   .hero-9-img img { width: 65%; /* max-width: none; */ display: inline-block; position: relative; left: 90px; }
   .hero-10-img img { width: 150%; position: relative; max-width: none; display: inline-block; }
   .hero-11-img { margin-top: 30px; }
-  .hero-12-img img { width: 130%; position: relative; max-width: none; display: inline-block; }
+  .hero-12-img img { width: 100%; position: relative; max-width: none; display: inline-block; }
 
   
   /*------------------------------------------*/

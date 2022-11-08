@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Nunito:wght@200;400;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+.body{
+font-family: 'Roboto' ,sans-serif;
+height: 100vh;
+display: grid;
+justify-content: center;
+align-items: center;
+font-size: 0.9rem;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); 
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+    height: 600px;
+    width: 1200px;
+    text-align: center;
+   
+}
+thead{
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);       
+}
+th{
+    padding: 10px;
+    color: #463853;
+    letter-spacing: 0.1rem;
+    font-weight: 900;
+   
+}
+td{
+    padding: 1rem 2rem;
+    color: #463853;
+}
+tr:nth-child(even){
+    background-color: rgba(255, 228, 196, 0.342);
+}
+.kobi{
+    height:100px;
+}
