@@ -189,6 +189,117 @@
 
 
 
+
+       
+          <div class="row pricing-wrap">
+            <div class="pricing-Kobi">
+             <a href="#" @click="pricingChange(1)">
+              <h6 class="text-center">KOBİ</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quam ad quis labore animi et excepturi? 
+                Accusantium officiis facilis velit minus magni alias, veniam sit, ratione est commodi, sunt quae.</p>
+             </a>
+            </div>
+            <div class="pricing-onMuhasebe">
+  
+              <a href="#" @click="pricingChange(2)">
+                <h6 class="text-center">Ön Muhasebe</h6>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quam ad quis labore animi et excepturi? 
+                  Accusantium officiis facilis velit minus magni alias, veniam sit, ratione est commodi, sunt quae.</p>
+               </a>
+  
+            </div>
+            <div class="pricing-resmiMuhasebe">
+              <a href="#" @click="pricingChange(3)">
+               <h6 class="text-center">Resmi Muhasebe</h6>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quam ad quis labore animi et excepturi? 
+                 Accusantium officiis facilis velit minus magni alias, veniam sit, ratione est commodi, sunt quae.</p>
+              </a>
+             </div>
+          </div>
+
+          <!--KOBİ-->
+          <div class="row month-year-wrap " v-if="index == 1">
+            <div class=" pricing-elements " >
+             <div class="">
+              <p class="pricing-title">Aylık Paket</p>
+               
+              <p>95.00₺</p>
+              <p>Kobi Özellik</p>
+              <p>Kobi Özellik</p>
+             </div>
+            </div>
+
+            <div>
+             <div class="pricing-elements">
+              <p class="pricing-title">Yıllık Paket</p>
+              <p>85.00₺</p>
+              <p>Kobi Özellik</p>
+              <p>Kobi Özellik</p>
+             </div>
+            </div>
+
+          </div>
+
+          <!--Ön Muhasebe-->
+          <div class="row month-year-wrap " v-if="index == 2">
+            <div class=" pricing-elements " >
+             <div class="">
+              <p class="pricing-title">Aylık Paket</p>
+               
+              <p>110.00₺</p>
+              <p>ön muhasebe Özellik</p>
+              <p>ön muhasebe Özellik</p>
+             </div>
+            </div>
+
+            <div>
+             <div class="pricing-elements">
+              <p class="pricing-title">Yıllık Paket</p>
+              <p>100.00₺</p>
+              <p>ön muhasebe Özellik</p>
+              <p>ön muhasebe Özellik</p>
+             </div>
+            </div>
+
+          </div>
+
+          <!--REsmi Muhasebe-->
+
+          <div class="row month-year-wrap " v-if="index == 3">
+            <div class=" pricing-elements " >
+             <div class="">
+              <p class="pricing-title">Aylık Paket</p>
+               
+              <p>120.00₺</p>
+              <p>resmi muhasebe Özellik</p>
+              <p>resmi muhasebe Özellik</p>
+             </div>
+            </div>
+
+            <div>
+             <div class="pricing-elements">
+              <p class="pricing-title">Yıllık Paket</p>
+              <p>150.00₺</p>
+              <p>resmi muhasebe Özellik</p>
+              <p>resmi muhasebe Özellik</p>
+             </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 	  <section id="pricing-2" class="wide-100 pricing-section division">
 		
       <div class="body">
@@ -445,7 +556,7 @@
       </div>
 
 	  </section>
-
+ -->
 
       <!-- 	<section id="pricing-2" class="wide-100 pricing-section division">
 			<div class="container">
@@ -749,6 +860,30 @@
       <!-- END FOOTER-2 -->
     </div>
     <!-- END PAGE CONTENT -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+    
+	<script>
+		const {
+			createApp
+		} = Vue;
+		createApp({
+			data() {
+				return {
+				index:1,
+				};
+			},
+
+			
+			methods: {
+			  pricingChange(event){
+         this.index = event
+       
+        }
+			},
+		}).mount("#page");
+	</script>
 
     <!-- EXTERNAL SCRIPTS
 		============================================= -->
